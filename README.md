@@ -91,14 +91,3 @@ The script will process the example transaction and, depending on your `ENABLE_S
 * Ensure your Python environment is properly configured and the dependencies are installed.
 * Keep your private keys secure; do not share them publicly.
 
-#
-
-## 📂 Repository Structure
-
-```
-ton-transfer-demo/
-├── test.py           # Main script
-├── requirements.txt  # Python dependencies
-├── README.md         # Project documentation
-└── .github/          # GitHub Actions workflow
-```
