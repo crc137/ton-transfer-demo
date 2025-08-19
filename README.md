@@ -4,14 +4,14 @@
 
 ✨ Welcome to **ton-transfer-demo**! ✨ This project provides a Python script to decode and optionally send TON transactions received via TonConnect. Base64-encoded transaction cells are converted into usable formats, making it ideal for developers exploring the TON blockchain.
 
-## 🚀 Key Features
+## Key Features:
 
-* 🔄 **Decode TonConnect Transactions**: Converts Base64-encoded cells into `pytoniq.Cell` objects.
-* 🔍 **Extract Transaction Details**: Retrieve destination addresses, amounts, and send modes easily.
-* ✉️ **Optional Transaction Sending**: Integrate with TON SDK to send processed transactions.
-* 🧪 **Test Mode**: Preview decoded transaction details without sending, perfect for debugging.
+*  **Decode TonConnect Transactions**: Converts Base64-encoded cells into `pytoniq.Cell` objects.
+*  **Extract Transaction Details**: Retrieve destination addresses, amounts, and send modes easily.
+*  **Optional Transaction Sending**: Integrate with TON SDK to send processed transactions.
+*  **Test Mode**: Preview decoded transaction details without sending, perfect for debugging.
 
-## 🛠️ Technologies Used
+## Technologies Used:
 
 * **Python 3.8+**
 * **pytoniq-core**: TON cell serialization/deserialization.
@@ -20,7 +20,7 @@
 * **aiohttp**: Async HTTP requests.
 * **asyncio**: Python's async framework.
 
-## 📥 Installation
+## Installation:
 
 1. Clone the repository:
 
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 > ⚠️ Note: `tonclient` and `tonutils-py` may require GitHub access or manual installation.
 
-## ⚙️ Configuration
+## Configuration:
 
 1. Open `test.py`.
 2. Set `ENABLE_SEND` to control sending transactions:
@@ -62,7 +62,7 @@ WALLET_PRIVATE_KEY = "YOUR_PRIVATE_KEY_64_BYTES_HEX"
 
 > **Keep your private key secure and do not commit it to GitHub!**
 
-## ▶️ Running the Script
+## Running the Script:
 
 ```bash
 python test.py
@@ -70,7 +70,7 @@ python test.py
 
 The script will decode the example transaction and either display details or send it based on `ENABLE_SEND`.
 
-## ⚠️ Safety & Notes
+## Safety & Notes:
 
 * This project is for **development and demonstration purposes only**.
 * Handle real transactions and keys **with extreme caution**.
