@@ -1,93 +1,78 @@
 # ton-transfer-demo
 
-✨ Welcome to **ton-transfer-demo**! ✨ This project features a handy Python script designed to process and optionally send transactions received via TonConnect. It efficiently decodes Base64-encoded cells into a usable format for the TON network, making it perfect for developers looking to understand or interact with TON transactions programmatically!
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)  [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+✨ Welcome to **ton-transfer-demo**! ✨ This project provides a Python script to decode and optionally send TON transactions received via TonConnect. Base64-encoded transaction cells are converted into usable formats, making it ideal for developers exploring the TON blockchain.
 
 ## 🚀 Key Features
 
-* 🔄 **Decode TonConnect Transactions**: Converts Base64-encoded transaction cells into `pytoniq.Cell` objects, ready for inspection.
-* 🔍 **Extract Transaction Details**: Easily retrieve essential information like destination address, amount, and send mode from decoded transactions.
-* ✉️ **Optional Transaction Sending**: Integrate with the TON SDK to send processed transactions to the network after decoding.
-* 🧪 **Test Mode**: Safely preview decoded transaction details without actually sending them, ideal for development and debugging.
+* 🔄 **Decode TonConnect Transactions**: Converts Base64-encoded cells into `pytoniq.Cell` objects.
+* 🔍 **Extract Transaction Details**: Retrieve destination addresses, amounts, and send modes easily.
+* ✉️ **Optional Transaction Sending**: Integrate with TON SDK to send processed transactions.
+* 🧪 **Test Mode**: Preview decoded transaction details without sending, perfect for debugging.
 
 ## 🛠️ Technologies Used
 
-### Backend
+* **Python 3.8+**
+* **pytoniq-core**: TON cell serialization/deserialization.
+* **tonclient**: Official TON SDK client.
+* **tonutils-py**: Utility library for TON.
+* **aiohttp**: Async HTTP requests.
+* **asyncio**: Python's async framework.
 
-* **Python**: The core language powering the `ton-transfer-demo` script.
-* **pytoniq-core**: Essential library for handling TON cell serialization and deserialization.
-* **tonclient**: The official TON SDK client for seamless interaction with the TON network.
-* **tonutils-py**: A utility library providing helpful functionalities for TON development.
-* **aiohttp**: Used for asynchronous HTTP requests, ensuring efficient network communication.
-* **asyncio**: Python's built-in library for writing concurrent code, enabling non-blocking operations.
+## 📥 Installation
 
-## 🚀 Getting Started
+1. Clone the repository:
 
-Follow these steps to set up and run the `ton-transfer-demo` project on your local machine.
+```bash
+git clone https://github.com/crc137/ton-transfer-demo.git
+cd ton-transfer-demo
+```
 
-### Prerequisites
+2. Create and activate a virtual environment:
 
-* Python 3.8+ installed on your system.
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-### Installation
+3. Install dependencies:
 
-1. **Clone the repository**:
+```bash
+pip install -r requirements.txt
+```
 
-   ```bash
-   git clone https://github.com/crc137/ton-transfer-demo.git
-   cd ton-transfer-demo
-   ```
+> ⚠️ Note: `tonclient` and `tonutils-py` may require GitHub access or manual installation.
 
-2. **Create and activate a virtual environment** (recommended for dependency isolation):
+## ⚙️ Configuration
 
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-   ```
+1. Open `test.py`.
+2. Set `ENABLE_SEND` to control sending transactions:
 
-3. **Install dependencies**:
+```python
+ENABLE_SEND = False  # True to send, False for test mode
+```
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+3. Enter your wallet details:
 
-   > ⚠️ **Note**: `tonclient` and `tonutils-py` may require special installation steps if installing directly from their GitHub repositories (e.g., manual download and local `pip install` or GitHub token/SSH access). Refer to their respective repository instructions if you encounter issues.
+```python
+WALLET_ADDRESS = "0:YOUR_WALLET_ADDRESS"
+WALLET_PRIVATE_KEY = "YOUR_PRIVATE_KEY_64_BYTES_HEX"
+```
 
-### Configuration
+> **Keep your private key secure and do not commit it to GitHub!**
 
-Before running `ton-transfer-demo`, you need to configure the main script:
-
-1. **Open `test.py`** in your preferred text editor.
-
-2. **Enable Sending (Optional)**:
-   Locate the `ENABLE_SEND` variable. Set it to `True` if you wish to actually send transactions to the TON network, or `False` to only decode and display information (test mode).
-
-   ```python
-   ENABLE_SEND = False # Change to True to enable transaction sending
-   ```
-
-3. **Set your Wallet Details**:
-   Replace the placeholder values for `WALLET_ADDRESS` and `WALLET_PRIVATE_KEY` with your actual TON wallet address and your 64-byte private key (in hexadecimal format). **Ensure these are kept private and secure.**
-
-   ```python
-   WALLET_ADDRESS = "0:YOUR_WALLET_ADDRESS"
-   WALLET_PRIVATE_KEY = "YOUR_PRIVATE_KEY_64_BYTES_HEX"
-   ```
-
-### Running the Script
-
-Once configured, execute the `ton-transfer-demo` script from its root directory:
+## ▶️ Running the Script
 
 ```bash
 python test.py
 ```
 
-The script will process the included example transaction. Depending on your `ENABLE_SEND` setting, it will either display its decoded details or attempt to send it to the TON network.
+The script will decode the example transaction and either display details or send it based on `ENABLE_SEND`.
 
-<hr>
+## ⚠️ Safety & Notes
 
-### ⚠️ Important Notes
-
-* The `ton-transfer-demo` project is primarily for **demonstration and development purposes**.
-* Always exercise **extreme caution** when dealing with real transactions and private keys.
-* Ensure your Python environment is correctly set up and all dependencies are installed.
-* **Never share your private keys publicly** or commit them to a public repository.
+* This project is for **development and demonstration purposes only**.
+* Handle real transactions and keys **with extreme caution**.
+* Ensure all dependencies are installed in the correct Python environment.
+* Never share private keys publicly.
