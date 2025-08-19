@@ -82,7 +82,7 @@ python test.py
 
 The script will process the example transaction and, depending on your `ENABLE_SEND` setting, either display its decoded details or attempt to send it to the TON network.
 
-
+#
 
 ## ⚠️ Notes
 
@@ -91,7 +91,7 @@ The script will process the example transaction and, depending on your `ENABLE_S
 * Ensure your Python environment is properly configured and the dependencies are installed.
 * Keep your private keys secure; do not share them publicly.
 
-
+#
 
 ## 📂 Repository Structure
 
