@@ -42,7 +42,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-> ⚠️ Note: `tonclient` and `tonutils-py` may require GitHub access or manual installation.
+> ⚠ Note: `tonclient` and `tonutils-py` may require GitHub access or manual installation.
 
 ## Configuration:
 
