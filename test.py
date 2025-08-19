@@ -4,9 +4,9 @@ from pytoniq import Cell
 from tonclient.client import TonClient
 from tonclient.types import ClientConfig, NetworkConfig, ParamsOfEncodeMessage, ParamsOfSendMessage
 
-ENABLE_SEND = False  # True - отправка, False - только тест/вывод
-WALLET_ADDRESS = "0:ВАШ_АДРЕС_КОШЕЛЬКА"
-WALLET_PRIVATE_KEY = "ВАШ_ПРИВАТНЫЙ_КЛЮЧ_64_БАЙТА_HEX"
+ENABLE_SEND = False  # True to send, False for test mode
+WALLET_ADDRESS = "0:YOUR_WALLET_ADDRESS"
+WALLET_PRIVATE_KEY = "YOUR_PRIVATE_KEY_64_BYTES_HEX"
 
 def tonconnect_to_cell(tx_dict):
     cell_boc = base64.b64decode(tx_dict["cell"])
@@ -77,7 +77,7 @@ async def main():
             print("TX hash:", send_result.transaction.hash)
             print("=" * 60)
     else:
-        print("Отправка транзакций отключена (тестовый режим).")
+        print("Sending transactions is disabled (test mode).")
 
 if __name__ == "__main__":
     asyncio.run(main())
