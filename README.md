@@ -83,7 +83,7 @@ python test.py
 
 The script will process the included example transaction. Depending on your `ENABLE_SEND` setting, it will either display its decoded details or attempt to send it to the TON network.
 
-
+<hr>
 
 ### ⚠️ Important Notes
 
