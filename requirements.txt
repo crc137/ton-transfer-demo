@@ -1,0 +1,5 @@
+pytoniq-core
+tonclient
+tonutils-py
+aiohttp
+asyncio
