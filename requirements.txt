@@ -1,4 +1,15 @@
-aiohttp>=3.8.0
+# Asynchronous requests
+aiohttp>=3.12.2
+
+# Working with BOC and cell
 pytoniq-core>=0.1.44
-git+https://github.com/tonlabs/ton-client-py.git@master#egg=tonclient
-git+https://github.com/everx-labs/tonutils-py.git@main#egg=tonutils-py
+
+# TON SDK via pip + tarball
+# Download archive manually: https://github.com/tonlabs/ton-client-py/archive/refs/heads/master.zip
+# and install locally:
+# pip install ./ton-client-py-master.zip
+
+# TON utils via pip + tarball
+# Download archive: https://github.com/everx-labs/tonutils-py/archive/refs/heads/main.zip
+# and install locally:
+# pip install ./tonutils-py-main.zip
