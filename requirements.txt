@@ -1,5 +1,4 @@
-pytoniq-core==0.1.44
-aiohttp==3.12.2
+aiohttp>=3.8.0
+pytoniq-core>=0.1.44
 git+https://github.com/tonlabs/ton-client-py.git@master#egg=tonclient
 git+https://github.com/everx-labs/tonutils-py.git@main#egg=tonutils-py
-asyncio
