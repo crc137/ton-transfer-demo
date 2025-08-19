@@ -76,3 +76,6 @@ The script will decode the example transaction and either display details or sen
 * Handle real transactions and keys **with extreme caution**.
 * Ensure all dependencies are installed in the correct Python environment.
 * Never share private keys publicly.
+
+## 🛡 License
+MIT © [Coonlink](https://coonlink.com)
