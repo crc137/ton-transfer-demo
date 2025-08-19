@@ -84,8 +84,7 @@ The script will process the example transaction and, depending on your `ENABLE_S
 
 #
 
-## ⚠️ Notes
-
+# ⚠️ Notes
 
 * This project is **for demonstration and development purposes**. Use caution when sending real transactions.
 * Ensure your Python environment is properly configured and the dependencies are installed.
