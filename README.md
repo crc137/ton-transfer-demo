@@ -1,67 +1,75 @@
-# TON Transaction Sender
+# ton-transfer-demo
 
-**Python скрипт для конвертации транзакций TonConnect (Base64-encoded cells) в объекты tonutils и отправки их через TON SDK. Поддерживает тестовый режим для проверки транзакций без отправки.**
+✨ Welcome to **ton-transfer-demo**! ✨ This project provides a handy Python script designed to process and optionally send transactions received via TonConnect, decoding them from Base64-encoded cells into usable formats for the TON network. It's a perfect tool for developers looking to understand or interact with TON transactions programmatically!
 
-## Описание
+## 🚀 Key Features
 
-Этот скрипт предназначен для обработки транзакций, полученных через TonConnect. Он декодирует Base64-строки в объекты `pytoniq.Cell`, извлекает информацию о транзакциях и, при необходимости, отправляет их через TON SDK. Скрипт поддерживает тестовый режим, позволяя проверять транзакции без их фактической отправки.
+*   🔄 **Decode TonConnect Transactions**: Converts Base64-encoded transaction cells into `pytoniq.Cell` objects.
+*   🔍 **Extract Transaction Details**: Easily retrieve essential information like destination address, amount, and send mode from decoded transactions.
+*   ✉️ **Optional Transaction Sending**: Integrate with the TON SDK to send processed transactions to the network.
+*   🧪 **Test Mode**: Safely preview decoded transaction details without actually sending them, perfect for development and debugging.
 
-## Установка
+## 🛠️ Technologies Used
 
-1. Клонируйте репозиторий:
+### Backend
 
-   ```bash
-   git clone https://github.com/crc137/ton-transfer-demo.git
-   cd ton-transfer-demo
-   ```
+*   **Python**: The core language for the script.
+*   **pytoniq-core**: For handling TON cell serialization and deserialization.
+*   **tonclient**: The official TON SDK client for interacting with the TON network.
+*   **tonutils-py**: A utility library for TON.
+*   **aiohttp**: For asynchronous HTTP requests.
+*   **asyncio**: Python's built-in library for writing concurrent code.
 
-2. Создайте и активируйте виртуальное окружение:
+## 🚀 Getting Started
 
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # Для Windows используйте `venv\Scripts\activate`
-   ```
+Follow these steps to set up and run the `ton-transfer-demo` project on your local machine.
 
-3. Установите зависимости:
+### Prerequisites
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+*   Python 3.8+
 
-## Настройка
+### Installation
 
-Перед запуском скрипта отредактируйте файл `test.py`:
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/crc137/ton-transfer-demo.git
+    cd ton-transfer-demo
+    ```
 
-* Установите переменную `ENABLE_SEND` в `True`, чтобы отправлять транзакции, или в `False`, чтобы только декодировать и выводить информацию.
-* Укажите ваш кошелек и приватный ключ:
+2.  **Create and activate a virtual environment**:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
 
-  ```python
-  WALLET_ADDRESS = "0:ВАШ_АДРЕС_КОШЕЛЬКА"
-  WALLET_PRIVATE_KEY = "ВАШ_ПРИВАТНЫЙ_КЛЮЧ_64_БАЙТА_HEX"
-  ```
+3.  **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-## Запуск
+### Configuration
 
-Для запуска скрипта выполните:
+Before running, you need to configure the `test.py` script:
+
+1.  **Edit `test.py`**: Open the `test.py` file in your favorite text editor.
+2.  **Enable Sending (Optional)**:
+    Set `ENABLE_SEND` to `True` if you want to actually send transactions, or `False` to only decode and display information (test mode).
+    ```python
+    ENABLE_SEND = False # Set to True to enable sending transactions
+    ```
+3.  **Set your Wallet Details**:
+    Replace the placeholder values for `WALLET_ADDRESS` and `WALLET_PRIVATE_KEY` with your actual TON wallet address and 64-byte private key (in hexadecimal format).
+    ```python
+    WALLET_ADDRESS = "0:YOUR_WALLET_ADDRESS"
+    WALLET_PRIVATE_KEY = "YOUR_PRIVATE_KEY_64_BYTES_HEX"
+    ```
+
+### Running the Script
+
+Once configured, execute the script from the `ton-transfer-demo` directory:
 
 ```bash
 python test.py
 ```
 
-## Пример вывода
-
-При успешном декодировании и отправке транзакции вы увидите:
-
-```
-Transaction 1:
-Destination: 0:8e459f28bbfae363e7c2275a502840fed1879199ee5a18161f4013cd48c70c8e
-Amount: 300000000
-Body: 704[0F8A7EA5003C0FE8079AD8A1405F5E100800C50193B6C706A9ADD83B7E6F576ABCCD7FF911DEDE6C8FCFBEB76BB22AC788AB003D18664E81F77462D4EEC09C131CFE8E8C58ED331CAAA682786155B90B4C98BAC81E19B041] -> {
-    897[6664DE2A8011CDDEED0BC82571423E357C811681554EE9C3C46088014C4E46704A2DDF85BC3003D18664E81F77462D4EEC09C131CFE8E8C58ED331CAAA682786155B90B4C98BAE007A30CC9D03EEE8C5A9DD81382639FD1D18B1DA6639554D04F0C2AB72169931758000000034520D0580] -> {
-        379[A018662CB15BDAE80A5C0801E8C332740FBBA316A77604E098E7F47462C76998E5553413C30AADC85A64C5D600000000]
-    }
-}
-Send mode: 3
---------------------------------------------------
-TX hash: 0x1234567890abcdef
-```
+The script will process the example transaction and, depending on your `ENABLE_SEND` setting, either display its decoded details or attempt to send it to the TON network.
